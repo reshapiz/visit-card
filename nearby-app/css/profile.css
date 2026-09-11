@@ -1,0 +1,14 @@
+.profile-screen-scroll { gap: 14px; }
+
+.profile-card { margin: 0 16px 4px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; }
+.profile-card-avatar { width: 84px; height: 84px; margin-bottom: 8px; }
+.profile-card-avatar .presence-dot { width: 18px; height: 18px; box-shadow: 0 0 0 3px var(--bg); }
+.profile-card.ghosted .profile-card-avatar { opacity: 0.45; filter: grayscale(0.6); }
+.profile-card-name { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+.profile-card-handle { font-size: 13px; color: var(--ink-2); }
+.profile-status-btn {
+  margin-top: 10px; display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px;
+  border-radius: var(--r-pill); background: var(--surface); border: 1px solid var(--line); color: var(--ink);
+  font-size: 13px; font-weight: 500; cursor: pointer; font-family: inherit; max-width: 100%;
+}
+.profile-status-btn span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

@@ -1,0 +1,13 @@
+.circle-scroll { gap: 24px; }
+.circle-head { padding: 0 16px; }
+.circle-head h2 { font-family: var(--serif); font-size: 30px; font-weight: 400; letter-spacing: -0.02em; }
+.circle-sub { color: var(--ink-2); font-size: 14px; margin-top: 6px; line-height: 1.4; }
+.circle-section { display: flex; flex-direction: column; gap: 10px; }
+.circle-section-title { padding: 0 16px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; }
+
+.connection-list { display: flex; flex-direction: column; gap: 8px; padding: 0 16px; }
+.connection-row { display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); }
+.connection-avatar { width: 40px; height: 40px; }
+.connection-body { flex: 1; min-width: 0; }
+.connection-name { font-size: 14px; font-weight: 600; display: block; }
+.connection-note { font-size: 12px; color: var(--ink-2); margin-top: 2px; display: block; }

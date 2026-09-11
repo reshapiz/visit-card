@@ -1,0 +1,22 @@
+.home-scroll { gap: 16px; }
+.home-header { padding: 0 16px; display: flex; flex-direction: column; gap: 10px; }
+.home-header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.home-eyebrow { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-2); font-weight: 500; }
+.home-radius-btn {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 6px; padding: 0; border: 0; background: none;
+  font-family: var(--serif); font-size: 26px; font-weight: 400; letter-spacing: -0.02em; color: var(--ink); cursor: pointer;
+}
+.home-radius-btn span:first-of-type { color: var(--accent); font-style: italic; }
+.home-radius-btn svg:last-child { color: var(--ink-3); width: 16px; height: 16px; margin-left: 2px; }
+.home-search-row.hidden { display: none; }
+
+.signal-row { display: flex; gap: 8px; padding: 0 16px; overflow-x: auto; }
+.signal-chip {
+  display: inline-flex; align-items: center; gap: 6px; padding: 9px 14px; border-radius: var(--r-pill);
+  background: var(--surface); border: 1px solid var(--line); color: var(--ink); font-size: 13px; font-weight: 500;
+  cursor: pointer; font-family: inherit; white-space: nowrap; flex-shrink: 0;
+}
+.signal-chip:active { transform: scale(0.96); }
+.signal-chip-accent { background: var(--ink); color: var(--bg); border-color: transparent; }
+
+.feed-section-label { padding: 0 16px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; }

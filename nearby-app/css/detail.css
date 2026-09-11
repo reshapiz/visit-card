@@ -1,0 +1,33 @@
+.detail-quote { font-size: 18px; line-height: 1.4; font-weight: 500; max-width: 26ch; }
+.detail-meta-row { display: flex; align-items: center; gap: 8px; color: var(--ink-2); font-size: 13px; font-weight: 500; }
+.detail-meta-row .sep { width: 3px; height: 3px; background: var(--ink-3); border-radius: 50%; }
+
+.event-scroll { padding-left: 0; padding-right: 0; gap: 0; }
+.event-cover { height: 200px; margin: 0 16px 18px; border-radius: var(--r-lg); display: grid; place-items: center; color: rgba(255,255,255,0.85); }
+.event-cover.g-paper { color: var(--ink); opacity: 0.5; }
+.event-body { padding: 0 16px; display: flex; flex-direction: column; gap: 10px; }
+.event-title { font-family: var(--serif); font-size: 26px; font-weight: 400; letter-spacing: -0.02em; line-height: 1.1; }
+.event-meta-row { display: flex; align-items: center; gap: 8px; color: var(--ink-2); font-size: 13px; font-weight: 500; }
+.event-meta-row .sep { width: 3px; height: 3px; background: var(--ink-3); border-radius: 50%; }
+.event-host-row { display: flex; align-items: center; gap: 10px; margin-top: 4px; }
+.event-host-avatar { width: 30px; height: 30px; }
+.event-host-label { font-size: 13px; color: var(--ink-2); }
+.event-host-label b { color: var(--ink); font-weight: 600; }
+.event-attendees-row { display: flex; align-items: center; gap: 8px; }
+.event-attendees-count { font-size: 12px; color: var(--ink-2); }
+.event-description { font-size: 14px; line-height: 1.55; color: var(--ink); margin-top: 4px; }
+.event-join-btn { margin: 20px 16px 4px; width: calc(100% - 32px); }
+.event-join-btn.joined { background: var(--good); color: #fff; }
+
+.compose-body { padding: 6px 20px 24px; display: flex; flex-direction: column; gap: 18px; }
+.compose-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.compose-option {
+  display: flex; flex-direction: column; gap: 8px; padding: 14px; border-radius: var(--r-md);
+  background: var(--bg-2); border: 1.5px solid transparent; cursor: pointer; font-family: inherit; text-align: left; color: var(--ink);
+}
+.compose-option .compose-option-icon { width: 30px; height: 30px; border-radius: 9px; background: var(--surface); display: grid; place-items: center; color: var(--accent); }
+.compose-option .compose-option-label { font-size: 13px; font-weight: 600; }
+.compose-option .compose-option-hint { font-size: 11px; color: var(--ink-2); line-height: 1.35; }
+.compose-option.selected { border-color: var(--ink); background: var(--surface); }
+.compose-field-label { font-size: 12px; font-weight: 500; color: var(--ink-2); margin-bottom: 6px; display: block; }
+.compose-radius-note { font-size: 12px; color: var(--ink-2); display: flex; align-items: center; gap: 6px; }
