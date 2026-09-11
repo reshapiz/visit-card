@@ -1738,3 +1738,37 @@ body.mobile-warning-open {
         font-size: 20px;
     }
 }
+@media (max-width: 700px) {
+    .modal {
+        padding: 0;
+    }
+
+    .modal__window {
+        width: 100vw;
+        height: 100svh;
+        max-height: 100svh;
+        border: 0;
+        border-radius: 0;
+    }
+
+    .modal__header {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: auto;
+        min-height: 0;
+        padding: calc(env(safe-area-inset-top, 0px) + 14px) 14px 0 0;
+        border-bottom: 0;
+        background: transparent;
+        z-index: 5;
+    }
+
+    .modal__header > div {
+        display: none;
+    }
+
+    .modal__close {
+        background: rgba(255, 255, 255, .85);
+        backdrop-filter: blur(6px);
+    }
+}
