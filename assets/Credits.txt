@@ -1,0 +1,9 @@
+The globe and route use Natural Earth land, lake and river data (public domain).
+https://www.naturalearthdata.com/
+https://github.com/nvkelso/natural-earth-vector
+
+Earth colour texture used for tonal relief:
+https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg
+
+Technology marks adapted from Devicon v2.16.0. See Devicon-LICENSE.txt.
+https://github.com/devicons/devicon/tree/v2.16.0
