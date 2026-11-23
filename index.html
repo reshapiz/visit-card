@@ -1,493 +1,180 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="yandex-verification" content="1eda2d6c51a729b6" />
-    <title>Matvey Smirnov — developer · Portfolio</title>
-    <meta name="description" content="Matvey Smirnov — student developer focused on software, mobile development and engineering.">
-    <meta name="description" content="Матвей Смирнов — студент-разработчик. Портфолио проектов в области программирования, информационных систем и мобильной разработки.">
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="canonical" href="https://reshapiz.ru/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="yandex-verification" content="1eda2d6c51a729b6">
+  <title>Matvey Smirnov — Developer portfolio | Reshapiz</title>
+  <meta name="description" content="Matvey Smirnov, a student developer in Cherepovets. Explore web projects, mobile experiments and the technologies behind them.">
+  <meta name="theme-color" content="#151613">
+  <link rel="canonical" href="https://reshapiz.ru/">
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="motion.js"></script>
+  <script defer src="script.js"></script>
+  <script defer src="journey.js"></script>
+  <script defer src="gallery.js"></script>
+  <noscript><style>.camera { display:none } .chapter { min-height:auto; padding-block:3rem; flex-wrap:wrap } .chapter div {width:min(100%,42rem)} .chapter img {display:block;width:min(100%,34rem);mix-blend-mode:screen}</style></noscript>
 </head>
-
-<body>
-    <div class="mobile-warning" id="mobileWarning" aria-hidden="true">
-    <div class="mobile-warning__backdrop"></div>
-
-    <div class="mobile-warning__window" role="dialog" aria-modal="true" aria-labelledby="mobileWarningTitle">
-        <span class="mobile-warning__label">MOBILE EXPERIENCE</span>
-
-        <h2 id="mobileWarningTitle">ADAPTATION IN PROGRESS</h2>
-
-        <p>
-            The mobile version of this website is still under development.
-            Some elements may not be displayed exactly as intended.
-            If this does not bother you, continue.
-        </p>
-
-        <button class="button button--dark mobile-warning__continue" type="button">
-            Continue
-        </button>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<button id="pause" class="motion-toggle" hidden aria-label="Pause motion" title="Pause motion">Ⅱ</button>
+<canvas class="ribbon-field atmosphere" aria-hidden="true"></canvas>
+<main id="main">
+  <div class="journey" id="about">
+    <div class="camera" aria-hidden="true">
+      <div class="planet">
+        <div class="orbit-ring"></div>
+        <img id="earth-poster" src="assets/earth.webp" alt="" fetchpriority="high">
+        <video id="earth-flight" data-src="assets/journey.mp4" muted playsinline preload="auto" tabindex="-1" poster="assets/earth.webp" disablepictureinpicture>
+        </video>
+      </div>
     </div>
-</div>
-    <div class="marquee">
-        <div class="marquee__track">
-            <span>MATVEY SMIRNOV · STUDENT DEVELOPER · BUILDING · LEARNING · SHIPPING · MATVEY SMIRNOV · STUDENT DEVELOPER · BUILDING · LEARNING · SHIPPING · </span>
-            <span>MATVEY SMIRNOV · STUDENT DEVELOPER · BUILDING · LEARNING · SHIPPING · MATVEY SMIRNOV · STUDENT DEVELOPER · BUILDING · LEARNING · SHIPPING · </span>
-            <span>MATVEY SMIRNOV · STUDENT DEVELOPER · BUILDING · LEARNING · SHIPPING · MATVEY SMIRNOV · STUDENT DEVELOPER · BUILDING · LEARNING · SHIPPING · </span>
-            <span>MATVEY SMIRNOV · STUDENT DEVELOPER · BUILDING · LEARNING · SHIPPING · MATVEY SMIRNOV · STUDENT DEVELOPER · BUILDING · LEARNING · SHIPPING · </span>
-            <span>MATVEY SMIRNOV · STUDENT DEVELOPER · BUILDING · LEARNING · SHIPPING · MATVEY SMIRNOV · STUDENT DEVELOPER · BUILDING · LEARNING · SHIPPING · </span>
-            <span>MATVEY SMIRNOV · STUDENT DEVELOPER · BUILDING · LEARNING · SHIPPING · MATVEY SMIRNOV · STUDENT DEVELOPER · BUILDING · LEARNING · SHIPPING · </span>
+    <div class="wrap chapters">
+      <div class="chapter intro">
+        <div>
+          <h1>Matvey<br>Smirnov<i>.</i></h1>
+          <p>I build web apps in Cherepovets. Right now I’m working on Nearlee, a Telegram mini app.</p>
+          <div class="project-shortcuts">
+            <a href="#project-nearlee"><img src="assets/nearlee.webp" width="72" height="58" alt=""><span>Nearlee<small>Local discovery</small></span></a>
+            <a href="#project-calotrack"><img src="assets/calotrack.webp" width="72" height="58" alt=""><span>CaloTrack<small>Nutrition tracker</small></span></a>
+          </div>
+          <div class="intro-links"><a href="#work">All projects</a><a href="#contact">Get in touch</a></div>
         </div>
-    </div>
-
-    <header class="site-header">
-        <nav class="nav">
-            <a href="#about">About</a>
-            <a href="#work">Work</a>
-            <a href="#stack">Stack</a>
-            <a href="#contact">Contact</a>
-        </nav>
-
-        <a class="button button--dark header__github" href="https://github.com/reshapiz" target="_blank" rel="noopener noreferrer">
-            GitHub
-        </a>
-
-        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
-            +
-        </button>
-    </header>
-
-    <main id="top">
-        <section class="section hero">
-            <div class="ribbon ribbon--hero"></div>
-
-            <div class="sticker sticker--ember sticker--rocket">↗</div>
-            <div class="sticker sticker--yellow sticker--coin">+</div>
-            <div class="sticker sticker--purple sticker--code">&lt;/&gt;</div>
-
-            <div class="hero__content reveal">
-                <div class="eyebrow">STUDENT DEVELOPER · CHEREPOVETS, RUSSIA</div>
-
-                <h1 class="display">
-                    RESHAPIZ
-                </h1>
-
-                <p class="hero__tagline">
-                    Student developer building software, exploring mobile development and growing toward engineering.
-                </p>
-
-                <div class="hero__actions">
-                    <a class="button button--dark" href="#work">View my work</a>
-                    <a class="button button--light" href="#contact">Get in touch</a>
-                </div>
-            </div>
-
-            <div class="sticker sticker--mint hero__sticker">
-                <strong>01</strong>
-                <span>BUILD<br>LEARN<br>REPEAT</span>
-            </div>
-        </section>
-
-        <section class="section section--white" id="about">
-
-            <div class="about-grid">
-                <div class="reveal">
-                    <h2 class="heading">
-                        CODE<br>
-                        WITH<br>
-                        PURPOSE
-                    </h2>
-                </div>
-
-                <div class="about-copy reveal">
-                    <p class="lead">
-                        I'm Matvey, a student developer focused on becoming a strong software engineer.
-                    </p>
-
-                    <p>
-                        I study Information Systems and Programming at Cherepovets Chemical-Technological College. My current focus is software development, with particular interest in mobile applications.
-                    </p>
-
-                    <p>
-                        I'm building my foundation across programming languages, databases, application development and software engineering practices.
-                    </p>
-
-                    <p>
-                        My long-term goal is to become highly proficient in Java, Kotlin, C# and database technologies while keeping the door open to engineering.
-                    </p>
-                </div>
-            </div>
-
-            <div class="timeline reveal">
-                <div class="timeline__item">
-                    <div class="timeline__year">NOW</div>
-
-                    <div class="timeline__body">
-                        <div class="timeline__title">
-                            <h3>CCTC</h3>
-
-                            <a class="circle-arrow" href="https://vk.ru/him_teh_che_professionalitet" target="_blank" rel="noopener noreferrer" aria-label="Open CCTC">
-                                ↗
-                            </a>
-                        </div>
-
-                        <p>Information Systems and Programming</p>
-                    </div>
-                </div>
-
-                <div class="timeline__item">
-                    <div class="timeline__year">NEXT</div>
-
-                    <div class="timeline__body">
-                        <div class="timeline__title">
-                            <h3>SUAI (GUAP)</h3>
-
-                            <a class="circle-arrow" href="https://guap.ru/" target="_blank" rel="noopener noreferrer" aria-label="Open SUAI">
-                                ↗
-                            </a>
-                        </div>
-
-                        <p>Planning to continue education at SUAI (GUAP)</p>
-                    </div>
-                </div>
-
-                <div class="timeline__item">
-                    <div class="timeline__year">AHEAD</div>
-
-                    <div class="timeline__body">
-                        <div class="timeline__title">
-                            <h3>ENGINEER</h3>
-                        </div>
-
-                        <p>Software development with an engineering perspective</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section--gray work" id="work">
-            <div class="ribbon ribbon--work"></div>
-
-            <h2 class="display display--work reveal">
-                THINGS<br>
-                I'M<br>
-                BUILDING
-            </h2>
-
-            <div class="projects">
-                <article class="project-card project-card--blue reveal">
-                    <div class="project-card__top">
-                        <span class="status">WEB PROJECT</span>
-                    </div>
-
-                    <div class="project-card__body">
-                        <span class="project-type">CALOTRACK</span>
-
-                        <h3>CALO<br>TRACK</h3>
-
-                        <p>
-                            A web application for calorie and nutrition tracking.
-                        </p>
-                    </div>
-
-                    <div class="project-card__bottom">
-                        <div class="tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-
-                        
-                        <a class="circle-arrow" href="https://github.com/reshapiz/calotrack" target="_blank" rel="noopener noreferrer" aria-label="Open Calotrack">
-                             ↗
-                        </a>
-                    </div>
-                              <br>
-                              <br>
-                              <br>  
-                        <a class="project-button" href="https://reshapiz.github.io/calotrack/" target="blank" rel="noopener noreferrer">
-                           OPEN LIVE ↗
-                        </a>
-                    </article>
-
-                <article class="project-card project-card--lavender reveal">
-                    <div class="project-card__top">
-                        <span class="status">CLIENT PROJECT</span>
-                    </div>
-
-                    <div class="project-card__body">
-                        <span class="project-type">E-COMMERCE</span>
-
-                        <h3>SHOP</h3>
-
-                        <p>
-                            A product sales website developed to help an acquaintance sell goods, including order formation and email delivery.
-                        </p>
-                    </div>
-
-                    <div class="project-card__bottom">
-                        <div class="tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-
-                        <a class="circle-arrow" href="https://github.com/reshapiz/shop" target="_blank" rel="noopener noreferrer" aria-label="Open Shop">
-                            ↗
-                        </a>
-                    </div>
-                </article>
-
-                <article class="project-card project-card--mint reveal">
-                    <div class="project-card__top">
-                        <span class="status">FIRST PROJECT</span>
-                    </div>
-
-                    <div class="project-card__body">
-                        <span class="project-type">WEB APPLICATION</span>
-
-                        <h3>TASK<br>TRACKER</h3>
-
-                        <p>
-                            My first website. A task management application with timers, priorities, categories, filtering, themes and persistent storage.
-                        </p>
-                    </div>
-
-                    <div class="project-card__bottom">
-                        <div class="tags">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
-                            <span>LocalStorage</span>
-                        </div>
-
-                        <a class="circle-arrow" href="https://github.com/reshapiz/task-tracker" target="_blank" rel="noopener noreferrer" aria-label="Open Task Tracker">
-                            ↗
-                        </a>
-                    </div>
-                </article>
-
-                <article class="project-card project-card--electric reveal project-card--nearby">
-                    <div class="project-card__top">
-                        <span class="status status--development">IN DEVELOPMENT</span>
-                    </div>
-
-                    <div class="project-card__body">
-                        <span class="project-type">MOBILE APPLICATION</span>
-
-                        <h3>NEARLEE<br>APP</h3>
-
-                        <p>
-                            A mobile application currently in development, exploring Flutter, Dart, Firebase and modern application architecture. At the time of development, the application functions as a telegram mini-app.
-                        </p>
-                    </div>
-
-                    <div class="project-card__bottom">
-                        <div class="tags">
-                            <span>Flutter</span>
-                            <span>Dart</span>
-                            <span>Firebase</span>
-                            <span>PHP</span>
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JS</span>
-                        </div>
-                        
-                        <a class="project-button" href="https://t.me/NearleeBot" target="blank" rel="noopener noreferrer">
-                           OPEN LIVE ↗
-                        </a>
-                    </div>
-                </article>
-
-                <article class="project-card project-card--yellow reveal">
-                    <div class="project-card__top">
-                        <span class="status status--archived">ARCHIVED</span>
-                    </div>
-
-                    <div class="project-card__body">
-                        <span class="project-type">AUTOHOTKEY AUTOMATION</span>
-
-                        <h3>VALORANT<br>TRIGGER BOT</h3>
-
-                        <p>
-                            An educational AutoHotkey automation project using pixel color detection. The repository was deleted for legal reasons.
-                        </p>
-                    </div>
-
-                    <div class="project-card__bottom">
-                        <div class="tags">
-                            <span>AutoHotkey</span>
-                            <span>Pixel Detection</span>
-                        </div>
-
-                        <span class="archived-mark">DELETED</span>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section class="section section--white stack" id="stack">
-            <div class="sticker sticker--yellow sticker--db">DB</div>
-
-            <div class="stack-intro">
-                <h2 class="heading reveal">
-                    MY<br>
-                    TOOLKIT
-                </h2>
-                <div class="stack-cloud reveal">
-                    <span class="tech tech--learning">in the study</span>
-                    <span class="tech tech--active">in possession</span>
-                    <span class="tech tech--violet">weak lvl</span>
-                    <span class="tech">considering it for study</span>
-                </div>  
-
-                <p class="lead reveal">
-                    A growing technical foundation across application development, programming languages, databases and web technologies.
-                </p>
-            </div>
-
-            <div class="stack-cloud reveal">
-                <span class="tech">Dart</span>
-                <span class="tech">Flutter</span>
-                <span class="tech tech--violet">C#</span>
-                <span class="tech tech--learning">Java</span>
-                <span class="tech tech--violet">Python</span>
-                <span class="tech tech--active">JavaScript</span>
-                <span class="tech tech--active">CSS</span>
-                <span class="tech tech--active">HTML</span>
-                <span class="tech tech--violet">SQL</span>
-                <span class="tech">Firebase</span>
-                <span class="tech ">Git</span>
-                <span class="tech tech--active">Go</span>
-                <span class="tech tech--learning">Kotlin</span>
-            </div>
-
-            <div class="active-note reveal">
-                <span class="active-note__dot"></span>
-                <strong>ACTIVE FOCUS</strong>
-                <span>Firebase · Flutter · Dart</span>
-            </div>
-        </section>
-
-        <section class="section section--sky direction">
-            <div class="ribbon ribbon--direction"></div>
-
-            <h2 class="display display--direction reveal">
-                BUILD<br>
-                DEEPER
-            </h2>
-
-            <div class="direction-content">
-                <p class="lead reveal">
-                    I'm still at the beginning of the path, so the priority is depth rather than simply collecting technologies.
-                </p>
-
-                <div class="direction-cards reveal">
-                    <article class="mini-card">
-                        <b>MOBILE</b>
-                        <span>Flutter & Dart</span>
-                    </article>
-
-                    <article class="mini-card">
-                        <b>LANGUAGES</b>
-                        <span>Java · Kotlin · C#</span>
-                    </article>
-
-                    <article class="mini-card">
-                        <b>DATA</b>
-                        <span>Databases & SQL</span>
-                    </article>
-
-                    <article class="mini-card">
-                        <b>ENGINEERING</b>
-                        <span>Systems & Software</span>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section--black contact" id="contact">
-            <div class="contact-sticker sticker sticker--ember">↗</div>
-
-            <h2 class="display display--contact reveal">
-                LET'S<br>
-                TALK
-            </h2>
-
-            <p class="contact-copy reveal">
-                Have a project, idea or opportunity? You can find me on Telegram or reach me by email.
-            </p>
-
-            <div class="contact-actions reveal">
-                <a class="button button--light" href="https://t.me/reshapiz" target="_blank" rel="noopener noreferrer">
-                    Telegram
-                </a>
-
-                <a class="button button--outline-light" href="mailto:Disketion-partner@yandex.ru">
-                    Email
-                </a>
-
-                <a class="button button--outline-light" href="https://github.com/reshapiz" target="_blank" rel="noopener noreferrer">
-                    GitHub
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <span>MATVEY SMIRNOV · STUDENT DEVELOPER</span>
-        <span>© 2026</span>
-        <a href="#top">BACK TO TOP ↑</a>
-    </footer>
-
-    <div class="modal" id="nearbyModal" aria-hidden="true">
-        <div class="modal__backdrop"></div>
-
-        <div class="modal__window" role="dialog" aria-modal="true" aria-labelledby="nearbyModalTitle">
-            <div class="modal__header">
-                <div>
-                    <span class="modal__eyebrow">IN DEVELOPMENT</span>
-                    <h2 id="nearbyModalTitle">NEARBY APP</h2>
-                </div>
-
-                <button class="modal__close" type="button" aria-label="Close preview">
-                    ×
-                </button>
-            </div>
-
-            <div class="modal__content">
-                <div class="modal__intro">
-                    <div>
-                        <span class="modal__label">FUTURE APPLICATION</span>
-                        <p>
-                            An app that surfaces what's happening right around you — nearby people, spontaneous meetups, local happenings and quiet signals when you could use company. The interface explores Home, Radar, Circle and Profile experiences.
-                        </p>
-                    </div>
-
-                    <div class="modal__tags">
-                        <span>Flutter</span>
-                        <span>Dart</span>
-                        <span>Firebase</span>
-                    </div>
-                </div>
-
-                <div class="nearby-preview">
-                    <iframe
-                        src="nearby-app/index.html"
-                        title="Nearby App preview"
-                        loading="lazy">
-                    </iframe>
-                </div>
-            </div>
+        <noscript><img src="assets/earth.webp" alt=""></noscript>
+      </div>
+      <div class="chapter home" id="cherepovets">
+        <div><h2>Cherepovets<i>.</i></h2>
+          <p>I study Information Systems and Programming at Cherepovets Chemical-Technological College.</p>
+          <a class="place-link" href="https://vk.ru/him_teh_che_professionalitet" target="_blank" rel="noopener noreferrer">CCTC on VK</a>
+          <img class="city-print" src="assets/bridge-print.webp" width="1000" height="270" alt="Illustration of a cable-stayed bridge over the Sheksna River" loading="lazy">
         </div>
+        <noscript><img src="assets/cherepovets.webp" alt=""></noscript>
+      </div>
+      <div class="chapter destination" id="petersburg">
+        <div><h2>Saint<br>Petersburg<i>.</i></h2>
+          <p>I’d like to continue my studies at the University of Aerospace Instrumentation and work toward a career in software engineering.</p>
+          <a class="place-link" href="https://guap.ru/" target="_blank" rel="noopener noreferrer">SUAI website</a>
+          <img class="city-print" src="assets/neva-print.webp" width="1000" height="270" alt="Illustration of the Saint Petersburg skyline along the Neva" loading="lazy">
+        </div>
+        <noscript><img src="assets/petersburg.webp" alt=""></noscript>
+      </div>
     </div>
-
-    <script src="script.js"></script>
+  </div>
+  <section class="work" id="work">
+    <div class="wrap">
+      <div class="section-head"><h2>Projects<i>.</i></h2>
+        <div class="filters" aria-label="Filter projects" role="group" hidden><button type="button" aria-pressed="true" data-filter="all">All <sup>5</sup></button><button type="button" aria-pressed="false" data-filter="web">Web</button><button type="button" aria-pressed="false" data-filter="mobile">Mobile</button><button type="button" aria-pressed="false" data-filter="archive">Archive</button></div>
+      </div>
+      <div class="project-grid">
+        <article class="project" id="project-calotrack" data-kind="web">
+          <div class="art" data-object="calotrack">
+            <img src="assets/calotrack.webp" alt="" loading="lazy">
+            <canvas aria-hidden="true"></canvas>
+            <span class="meta">Web app</span>
+            <h3>CaloTrack</h3>
+          </div>
+          <p>A web application for tracking calories and nutrition.</p><div class="tools">HTML · CSS · JavaScript</div>
+          <div class="links"><a href="https://reshapiz.github.io/calotrack/" target="_blank" rel="noopener noreferrer">Open live site</a><a href="https://github.com/reshapiz/calotrack" target="_blank" rel="noopener noreferrer">Source code</a></div>
+        </article>
+        <article class="project" id="project-nearlee" data-kind="mobile">
+          <div class="art" data-object="nearlee">
+            <img src="assets/nearlee.webp" alt="" loading="lazy">
+            <canvas aria-hidden="true"></canvas>
+            <span class="meta">In development</span>
+            <h3>Nearlee</h3>
+          </div>
+          <p>A Telegram mini app for finding people and meetups nearby.</p><div class="tools">PHP · HTML · CSS · JavaScript · MySQL</div>
+          <div class="links"><a href="https://t.me/NearleeBot" target="_blank" rel="noopener noreferrer">Open in Telegram</a></div>
+        </article>
+        <article class="project" id="project-shop" data-kind="web">
+          <div class="art" data-object="shop">
+            <img src="assets/shop.webp" alt="" loading="lazy">
+            <canvas aria-hidden="true"></canvas>
+            <span class="meta">Client project</span>
+            <h3>Shop</h3>
+          </div>
+          <p>A storefront built for an acquaintance. Customers put together an order and the shop receives it by email.</p><div class="tools">HTML · CSS · JavaScript</div><div class="links"><a href="https://github.com/reshapiz/shop" target="_blank" rel="noopener noreferrer">Source code</a></div>
+        </article>
+        <article class="project" id="project-task-tracker" data-kind="web">
+          <div class="art" data-object="task-tracker">
+            <img src="assets/task-tracker.webp" alt="" loading="lazy">
+            <canvas aria-hidden="true"></canvas>
+            <span class="meta">First project</span>
+            <h3>Task Tracker</h3>
+          </div>
+          <p>My first website. A task manager with timers, priorities, categories, filters, themes and local storage.</p><div class="tools">HTML5 · CSS3 · JavaScript · LocalStorage</div><div class="links"><a href="https://github.com/reshapiz/task-tracker" target="_blank" rel="noopener noreferrer">Source code</a></div>
+        </article>
+        <article class="project" id="project-archive" data-kind="archive">
+          <div class="art" data-object="archive">
+            <img src="assets/archive.webp" alt="" loading="lazy">
+            <canvas aria-hidden="true"></canvas>
+            <span class="meta">Archived</span>
+            <h3>Valorant Trigger Bot</h3>
+          </div>
+          <p>An early AutoHotkey experiment in pixel colour detection. I removed the repository for legal reasons.</p><div class="tools">AutoHotkey · Pixel detection</div>
+        </article>
+      </div>
+      <span class="sr" id="filter-status" role="status"></span>
+    </div>
+  </section>
+  <section class="toolkit wrap" id="stack">
+    <div class="stack-intro"><h2>Skills<i>.</i></h2></div>
+    <fieldset class="keyboard"><legend class="sr">Explore a technology</legend>
+        <input class="skill-choice sr" type="radio" name="technology" id="skill-0" aria-describedby="note-0" checked>
+        <label class="key" for="skill-0" style="--symbol:0">JavaScript</label>
+        <div class="skill-note" id="note-0"><p>I use JavaScript for interactions in my web apps.</p><div class="skill-projects"><a href="#project-nearlee">Nearlee</a><a href="#project-calotrack">CaloTrack</a><a href="#project-shop">Shop</a><a href="#project-task-tracker">Task Tracker</a></div></div>
+        <input class="skill-choice sr" type="radio" name="technology" id="skill-1" aria-describedby="note-1">
+        <label class="key" for="skill-1" style="--symbol:1">HTML</label>
+        <div class="skill-note" id="note-1"><p>I use HTML to structure the pages in my web projects.</p><div class="skill-projects"><a href="#project-nearlee">Nearlee</a><a href="#project-shop">Shop</a><a href="#project-calotrack">CaloTrack</a></div></div>
+        <input class="skill-choice sr" type="radio" name="technology" id="skill-2" aria-describedby="note-2">
+        <label class="key" for="skill-2" style="--symbol:2">CSS</label>
+        <div class="skill-note" id="note-2"><p>I use CSS for layouts and themes. Task Tracker was my first site with switchable themes.</p><div class="skill-projects"><a href="#project-nearlee">Nearlee</a><a href="#project-task-tracker">Task Tracker</a></div></div>
+        <input class="skill-choice sr" type="radio" name="technology" id="skill-3" aria-describedby="note-3">
+        <label class="key" for="skill-3" style="--symbol:3">Go</label>
+        <div class="skill-note" id="note-3"><p>One of the languages in my current toolkit.</p></div>
+        <input class="skill-choice sr" type="radio" name="technology" id="skill-4" aria-describedby="note-4">
+        <label class="key" for="skill-4" style="--symbol:4">Flutter</label>
+        <div class="skill-note" id="note-4"><p>I’m exploring Flutter for mobile development.</p></div>
+        <input class="skill-choice sr" type="radio" name="technology" id="skill-5" aria-describedby="note-5">
+        <label class="key" for="skill-5" style="--symbol:5">Dart</label>
+        <div class="skill-note" id="note-5"><p>I’m learning Dart alongside Flutter for mobile development.</p></div>
+        <input class="skill-choice sr" type="radio" name="technology" id="skill-6" aria-describedby="note-6">
+        <label class="key" for="skill-6" style="--symbol:6">Firebase</label>
+        <div class="skill-note" id="note-6"><p>I’m exploring Firebase for future mobile projects.</p></div>
+        <input class="skill-choice sr" type="radio" name="technology" id="skill-7" aria-describedby="note-7">
+        <label class="key" for="skill-7" style="--symbol:7">Java</label>
+        <div class="skill-note" id="note-7"><p>I’m studying Java as part of my software engineering foundation.</p></div>
+        <input class="skill-choice sr" type="radio" name="technology" id="skill-8" aria-describedby="note-8">
+        <label class="key" for="skill-8" style="--symbol:8">Kotlin</label>
+        <div class="skill-note" id="note-8"><p>I’m studying Kotlin with mobile development in mind.</p></div>
+        <input class="skill-choice sr" type="radio" name="technology" id="skill-9" aria-describedby="note-9">
+        <label class="key" for="skill-9" style="--symbol:9">C#</label>
+        <div class="skill-note" id="note-9"><p>I know the basics and want to go further with C#.</p></div>
+        <input class="skill-choice sr" type="radio" name="technology" id="skill-10" aria-describedby="note-10">
+        <label class="key" for="skill-10" style="--symbol:10">Python</label>
+        <div class="skill-note" id="note-10"><p>I’m learning the fundamentals of Python.</p></div>
+        <input class="skill-choice sr" type="radio" name="technology" id="skill-11" aria-describedby="note-11">
+        <label class="key" for="skill-11" style="--symbol:11">SQL</label>
+        <div class="skill-note" id="note-11"><p>I’m building my foundation in queries and relational databases.</p><div class="skill-projects"><a href="#project-nearlee">Nearlee</a></div></div>
+        <input class="skill-choice sr" type="radio" name="technology" id="skill-12" aria-describedby="note-12">
+        <label class="key" for="skill-12" style="--symbol:12">Git</label>
+        <div class="skill-note" id="note-12"><p>I’m exploring version control and development workflows.</p></div>
+        <input class="skill-choice sr" type="radio" name="technology" id="skill-13" aria-describedby="note-13">
+        <label class="key" for="skill-13" style="--symbol:13">PHP</label>
+        <div class="skill-note" id="note-13"><p>I use PHP for the server side of Nearlee.</p><div class="skill-projects"><a href="#project-nearlee">Nearlee</a></div></div>
+        <input class="skill-choice sr" type="radio" name="technology" id="skill-14" aria-describedby="note-14">
+        <label class="key" for="skill-14" style="--symbol:14">MySQL</label>
+        <div class="skill-note" id="note-14"><p>Nearlee uses MySQL for data storage.</p><div class="skill-projects"><a href="#project-nearlee">Nearlee</a></div></div>
+    </fieldset>
+  </section>
+  <section class="contact wrap" id="contact">
+    <div><h2>Get in<br>touch<i>.</i></h2>
+      <div class="links"><a href="https://t.me/reshapiz" target="_blank" rel="noopener noreferrer">Telegram</a><a href="mailto:Disketion-partner@yandex.ru">Email</a><a href="https://github.com/reshapiz" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+    </div>
+    <form id="contact-form" hidden><label for="sender">Your name</label><input id="sender" name="name" autocomplete="name" placeholder="Name" required maxlength="100"><label for="message">Your message</label><textarea id="message" name="message" rows="3" required maxlength="1500" placeholder="What do you have in mind?"></textarea><p class="form-note">Opens a draft in your email app. You can review it before sending.</p><button class="btn dark" type="submit">Open email draft</button><p id="mail-status" class="form-note" role="status"></p></form>
+  </section>
+</main>
+<footer><div class="wrap"><span>Matvey Smirnov</span><a href="#top">Back to top</a></div></footer>
 </body>
 </html>

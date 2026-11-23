@@ -1,133 +1,60 @@
-const menuToggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".nav");
-const mobileWarning = document.getElementById("mobileWarning");
-const mobileWarningContinue = mobileWarning?.querySelector(".mobile-warning__continue");
-
-function updateMobileWarning() {
-    if (!mobileWarning) {
-        return;
+(() => {
+  const filters = document.querySelector('.filters');
+  const projects = [...document.querySelectorAll('.project')];
+  filters.hidden = false;
+  filters.addEventListener('click', event => {
+    const selected = event.target.closest('[data-filter]');
+    if (!selected) return;
+    for (const button of filters.querySelectorAll('button')) {
+      button.setAttribute('aria-pressed', String(button === selected));
     }
-
-    const isMobile = window.matchMedia("(max-width: 700px)").matches;
-
-    if (!isMobile) {
-        mobileWarning.classList.add("is-hidden");
-        mobileWarning.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("mobile-warning-open");
-        return;
+    const previous = new Map(projects.filter(project => !project.hidden)
+      .map(project => [project, project.getBoundingClientRect()]));
+    let count = 0;
+    for (const project of projects) {
+      project.hidden = selected.dataset.filter !== 'all' && project.dataset.kind !== selected.dataset.filter;
+      if (!project.hidden) count++;
     }
-
-    if (!mobileWarning.classList.contains("mobile-warning-dismissed")) {
-        mobileWarning.classList.remove("is-hidden");
-        mobileWarning.setAttribute("aria-hidden", "false");
-        document.body.classList.add("mobile-warning-open");
+    if (portfolioMotion.running) {
+      for (const project of projects.filter(project => !project.hidden)) {
+        project.getAnimations().forEach(animation => animation.cancel());
+        const before = previous.get(project);
+        if (!before) { portfolioMotion.reveal(project); continue; }
+        const after = project.getBoundingClientRect();
+        const effect = project.animate([
+          {transform: `translate(${before.x-after.x}px, ${before.y-after.y}px)`},
+          {transform: 'none'}
+        ], {duration: 430, easing: 'cubic-bezier(.2,.75,.25,1)'});
+        effect.id = 'portfolio-entry';
+      }
     }
-}
+    document.querySelector('#filter-status').textContent = count + (count === 1 ? ' project shown.' : ' projects shown.');
+  });
 
-mobileWarningContinue?.addEventListener("click", () => {
-    mobileWarning.classList.add("is-hidden");
-    mobileWarning.classList.add("mobile-warning-dismissed");
-    mobileWarning.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("mobile-warning-open");
-});
-
-updateMobileWarning();
-
-window.addEventListener("resize", updateMobileWarning);
-
-if (menuToggle && nav) {
-    menuToggle.addEventListener("click", () => {
-        const opened = nav.classList.toggle("is-open");
-        menuToggle.setAttribute("aria-expanded", String(opened));
-        menuToggle.textContent = opened ? "×" : "+";
-    });
-
-    nav.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-            nav.classList.remove("is-open");
-            menuToggle.setAttribute("aria-expanded", "false");
-            menuToggle.textContent = "+";
-        });
-    });
-}
-
-const revealItems = document.querySelectorAll(".reveal");
-
-const revealObserver = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                revealObserver.unobserve(entry.target);
-            }
-        });
-    },
-    {
-        threshold: 0.12
+  const form = document.querySelector('#contact-form');
+  form.hidden = false;
+  form.addEventListener('invalid', event => {
+    const field = event.target;
+    if (field.validity.valueMissing) {
+      field.setCustomValidity(field.name === 'name' ? 'Enter your name.' : 'Write a message.');
     }
-);
-
-revealItems.forEach((item) => {
-    revealObserver.observe(item);
-});
-
-const modal = document.getElementById("nearbyModal");
-const nearbyButtons = document.querySelectorAll(".nearby-open");
-const closeButton = modal?.querySelector(".modal__close");
-const backdrop = modal?.querySelector(".modal__backdrop");
-
-function openNearbyModal() {
-    if (!modal) {
-        return;
+  }, true);
+  form.addEventListener('input', event => {
+    event.target.setCustomValidity('');
+    document.querySelector('#mail-status').textContent = '';
+  });
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    const name = form.elements.name;
+    const message = form.elements.message;
+    for (const field of [name, message]) {
+      field.setCustomValidity(field.value.trim() ? '' : 'Please fill out this field.');
     }
-
-    modal.classList.add("is-open");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("modal-open");
-}
-
-function closeNearbyModal() {
-    if (!modal) {
-        return;
-    }
-
-    modal.classList.remove("is-open");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("modal-open");
-}
-
-nearbyButtons.forEach((button) => {
-    button.addEventListener("click", openNearbyModal);
-});
-
-closeButton?.addEventListener("click", closeNearbyModal);
-backdrop?.addEventListener("click", closeNearbyModal);
-
-document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && modal?.classList.contains("is-open")) {
-        closeNearbyModal();
-    }
-});
-
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
-    link.addEventListener("click", (event) => {
-        const targetId = link.getAttribute("href");
-
-        if (!targetId || targetId === "#") {
-            return;
-        }
-
-        const target = document.querySelector(targetId);
-
-        if (!target) {
-            return;
-        }
-
-        event.preventDefault();
-
-        target.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-    });
-});
+    if (!form.reportValidity()) return;
+    const subject = encodeURIComponent('Portfolio enquiry from ' + name.value.trim());
+    const body = encodeURIComponent(message.value.trim() + '\r\n\r\n' + name.value.trim());
+    const address = document.querySelector('.contact a[href^="mailto:"]').href;
+    window.location.href = address + '?subject=' + subject + '&body=' + body;
+    document.querySelector('#mail-status').textContent = 'If your email app didn’t open, use Telegram or email Disketion-partner@yandex.ru.';
+  });
+})();
